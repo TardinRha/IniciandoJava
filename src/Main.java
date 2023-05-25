@@ -1,8 +1,10 @@
+import javax.swing.plaf.synth.SynthOptionPaneUI;
 import java.security.spec.RSAOtherPrimeInfo;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.format.TextStyle;
+import java.util.Arrays;
 import java.util.Locale;
 
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
@@ -71,19 +73,19 @@ public class Main {
         System.out.println();
         System.out.println();
         nome = "Rhaissa";
-        System.out.println(nome.toUpperCase());
-        System.out.println(nome.toLowerCase());
+        System.out.println("PALAVRAS EM MAIUSCULO: " + nome.toUpperCase());
+        System.out.println("PALAVRAS EM MINUSCULO: " + nome.toLowerCase());
         System.out.println("quantidade de caracteres do nome: " + nome.length());
         String outroNome = "rhaissa";
-        System.out.println(nome.equals(outroNome)); //compara uma variável com a outra
-        System.out.println(nome.equalsIgnoreCase(outroNome)); //compara uma variável com a outra ignorando se maiusculo ou minusculo
+        System.out.println("Comparar variável com outra: " + nome.equals(outroNome)); //compara uma variável com a outra
+        System.out.println("Comparar variável com outra ignorando maiusculas: " + nome.equalsIgnoreCase(outroNome)); //compara uma variável com a outra ignorando se maiusculo ou minusculo
         // declarei import java.time.LocalDate; do lado de fora igual o using em C#
         // declarei import java.util.Locale;
         LocalDate hoje = LocalDate.now();
-        System.out.println(hoje);
-        System.out.println(hoje.getDayOfWeek()); //dia da semana
+        System.out.println("Que dia é hoje: " + hoje);
+        System.out.println("Dia da semana que é hoje sem formatação: " + hoje.getDayOfWeek()); //dia da semana
         Locale brasil = new Locale("pt", "BR");
-        System.out.println(hoje.getDayOfWeek().getDisplayName(TextStyle.FULL, brasil));
+        System.out.println("Dia da semana que é hoje formatado pata pt/BR: " + hoje.getDayOfWeek().getDisplayName(TextStyle.FULL, brasil));
         String diaSemana = hoje.getDayOfWeek().getDisplayName(TextStyle.FULL, brasil);
         String saudacao;
         LocalDateTime agora = LocalDateTime.now();
@@ -99,5 +101,7 @@ public class Main {
         //outro jeito:
         System.out.printf("Olá, %s. Hoje é %s, %s.%n", nome, diaSemana, saudacao.toLowerCase());
         System.out.printf("Olá, %s. Hoje é %s, %s.%n", nome, diaSemana, saudacao.toUpperCase());
+        System.out.println();
+        System.out.println();
     }
 }
